@@ -9,11 +9,16 @@
         android:id="@+id/characterFragment"
         android:name="com.example.aruuke_rakhmanova_hw8_3m.CharacterFragment"
         android:label="fragment_character"
-        tools:layout="@layout/fragment_character" />
-
+        tools:layout="@layout/fragment_character" >
+        <action
+            android:id="@+id/action_characterFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.example.aruuke_rakhmanova_hw8_3m.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        android:id="@+id/detailFragment"
+        android:name="com.example.aruuke_rakhmanova_hw8_3m.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+
+
 </navigation>

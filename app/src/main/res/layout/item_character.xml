@@ -4,44 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_item"
     android:layout_margin="15dp"
-    >
+    android:background="@drawable/bg_item">
 
     <ImageView
         android:id="@+id/img_character"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginBottom="75dp"
-        android:src="@drawable/rick"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/rick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Alive"
         android:paddingStart="10dp"
         android:paddingTop="5dp"
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/img_character"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:text="Alive" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Rick Sanchez"
         android:paddingStart="10dp"
         android:textColor="@color/dark_gray"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tv_status"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:text="Rick Sanchez" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.aruuke_rakhmanova_hw8_3m.databinding.ItemCharacterBinding
+import kotlin.reflect.KFunction1
 
-class CharacterAdapter(val characterList: List<Character>) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter(
+    val characterList: List<Character>,
+    private val onClick: KFunction1<Character, Unit>
+) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -21,6 +25,9 @@ class CharacterAdapter(val characterList: List<Character>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(characterList[position])
+        holder.itemView.setOnClickListener {
+            onClick.invoke(characterList[position])
+        }
     }
 
     class ViewHolder(val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root) {
